@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- styles -->
+  <style>
+    :root {
+      --primary-bg-color: #F2F2F2;
+      /* body,card */
+      --secondary-bg-color: #8c8c8c;
+      --primary-bg-color-variant: white;
+      --secondary-bg-color-variant: #FBB040;
+      /* search btn,*/
+
+      --primary-text-color: #333333;
+      --secondary-text-color: #4E4E4E;
+      --primary-text-color-error: #D9001B;
+      --primary-text-color-link: #169BD5;
+      --secondary-text-color-variant: #4E4E4E;
+
+      --primary-font-family: 'Tahoma', sans-serif;
+      --secondary-font-family: 'Arial', sans-serif;
+
+    }
+
+    body {
+      background-color: var(--primary-bg-color);
+      padding-bottom: 300px;
+      margin: 20px 100px 50px 100px;
+      font-family: var(--primary-font-family);
+    }
+
+    .image_container {
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    .u1_image {
+      border-width: 0px;
+      left: 0px;
+      top: 100px;
+      width: 299px;
+      height: 141px;
+    }
+
+    .u1_text,
+    .u2_text,
+    .u3_text {
+      font-weight: 400;
+      font-style: normal;
+      padding-top: 10px;
+    }
+
+    .u1_text,
+    .u2_text {
+      font-size: 16px;
+    }
+
+    .u1_text {
+      color: var(--primary-text-color);
+    }
+
+    .u2_text {
+      color: var(--secondary-bg-color);
+    }
+
+    .u3_text {
+      font-size: 12px;
+      color: var(--secondary-bg-color);
+    }
+
+
+    .input-group .btn {
+      height: 50px !important;
+      width: 153px;
+      background-color: var(--secondary-bg-color-variant) !important;
+      border-color: var(--secondary-bg-color-variant) !important;
+      font-size: 16px;
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
+
+    .card,
+    .collapse {
+      padding-top: 20px !important;
+      border: none !important;
+      background-color: var(--primary-bg-color) !important;
+      padding-right: 0 !important;
+    }
+
+
+    .card .btn {
+      width: 153px;
+      background-color: var(--primary-bg-color) !important;
+      border-color: var(--primary-bg-color) !important;
+      font-size: 12px;
+    }
+
+
+
+    body {
+      background-color: var(--primary-bg-color);
+      padding-top: 7%;
+      padding-bottom: 0px;
+      margin: 20px 100px 50px 100px;
+      font-family: var(--primary-font-family);
+    }
+
+    a {
+      color: var(--secondary-bg-color) !important;
+    }
+
+
+    .image_container {
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    .u1_image {
+      border-width: 0px;
+      left: 0px;
+      top: 100px;
+      width: 299px;
+      height: 141px;
+    }
+
+    .u1_text,
+    .u2_text,
+    .u3_text {
+      font-weight: 400;
+      font-style: normal;
+      padding-top: 10px;
+    }
+
+    .u1_text,
+    .u2_text {
+      font-size: 16px;
+    }
+
+    .u1_text {
+      color: var(--primary-text-color);
+
+    }
+
+    .u2_text {
+      color: var(--secondary-bg-color);
+    }
+
+    .u3_text {
+      font-size: 14px;
+      color: var(--primary-text-color);
+      /* width: ; */
+    }
+
+
+    .input-group .btn {
+      height: 50px !important;
+      width: 153px;
+      background-color: var(--secondary-bg-color-variant) !important;
+      border-color: var(--secondary-bg-color-variant) !important;
+      font-size: 16px;
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
+
+    .card,
+    .card-header,
+    .card-body,
+    .collapse {
+      border: none !important;
+      background-color: var(--primary-bg-color) !important;
+      padding-right: 0 !important;
+    }
+
+    .card .card-body {
+      padding-right: 0 !important;
+      height: 100px !important;
+    }
+
+    .card .btn {
+      width: 153px;
+      background-color: var(--primary-bg-color) !important;
+      border-color: var(--primary-bg-color) !important;
+      font-size: 12px;
+    }
+
+
+    .input-group {
+      padding-left: 10% !important;
+      padding-right: 10% !important;
+    }
+
+    .input-group .form-control {
+      height: 50px !important;
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+      border-color: var(--primary-bg-color-variant) !important;
+      font-size: 16px !important;
+      font-weight: 400px !important;
+      color: var(--primary-text-color) !important;
+      background-color: var(--primary-bg-color-variant) !important;
+      padding-left: 40px !important;
+    }
+
+    .input-group ::placeholder {
+      position: relative;
+      color: var(--secondary-bg-color) !important;
+
+    }
+
+    .error-message {
+      font-size: 13px;
+      font-weight: 400;
+      font-family: var(--primary-font-family);
+      color: var(--primary-text-color-error) !important;
+      padding-top: 5px;
+      padding-left: 10%;
+      display: none;
+    }
+
+    button {
+      border: none;
+      background-color: var(--primary-bg-color-variant) !important;
+    }
+
+    button:active {
+      outline: none;
+    }
+
+    .card .list-inline .list-inline-item {
+      background-color: var(--primary-bg-color-variant) !important;
+      padding-left: 5px !important;
+      padding-right: 5px !important;
+      margin-bottom: 5px !important;
+      margin-left: 8px !important;
+      margin-right: 8px !important;
+      border-radius: 5px !important;
+    }
+
+    .card .list-inline {
+      padding-left: 14%;
+    }
+
+
+    .card #more-btn {
+      display: none;
+    }
+
+
+    .list-inline-item {
+      pointer-events: auto;
+    }
+
+    .question {
+      /* background-color: #FBB040 !important; */
+      width: 200px !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
+
+    #tooltip {
+      position: absolute;
+      transform: translate(20%, -100%);
+      visibility: hidden;
+      background-color: #F2F2F2;
+      border: solid 1px black;
+      border-radius: 5px;
+      padding-left: 5px;
+      padding-right: 5px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+
+    .list-inline-item:hover #tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 40px;
+      width: 100%;
+      background-color: var(--secondary-text-color);
+      color: var(--primary-bg-color-variant);
+      font-size: 12px;
+      text-align: center;
+      padding-top: 10px;
+    }
+
+    .footer a {
+      color: var(--primary-text-color-link) !important;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="image_container">
+    <img class="u1_image" src="Media\mainlogo_u1.jpg" alt="iTanong-Logo">
+  </div>
+  <div class="image_container ml-2">
+    <p>
+      <span class="u2_text">Search information about </span>
+      <span class="u1_text"> DOST - ASTI </span>
+    </p>
+  </div>
+
+
+  <div class="input-group" style="margin-top: 40px;">
+    <input type="text" class="form-control rounded" style="position:relative"
+      placeholder="Type a query in Tagalog, English or Taglish" minlength="1" autocomplete="off"
+      oninput="input_change()" onkeydown="{handle_keydown}" id="search_txt_query" aria-label="Search"
+      aria-describedby="search-addon" required />
+    <button type="button" onClick="search_btn()" class="btn btn-primary" id="search_btn">SEARCH
+    </button>
+
+  </div>
+  <div id="results" class="input-group"></div>
+
+  <!--   -->
+
+  <div class="error-message" id="error_msg">
+    Invalid input. Only accepts alphabet and numbers.
+  </div>
+
+  </div>
+
+
+  <!-- Dropdown menu lists-->
+
+  <div class="card" id="card_suggest_list">
+
+    <!-- uncollapsed view -->
+    <div class="row" style="margin-left: 73px">
+
+      <div class="col-sm-9 left" style="text-align: center;">
+
+        <span class="u3_text">
+
+          <ul class="list-inline" id="list" style="pointer-events: none; text-align: center;">
+
+            <li class="list-inline-item">
+              <span id="tooltip">Ilan sa permanent ang may
+                birthmonth na
+                July?</span>
+              <button class="question">Ilan sa permanent ang may birthmonth na July?</button>
+            </li>
+            <li class="list-inline-item">
+              <span id="tooltip">Sino-sino ang may birthmonth sa July?</span>
+              <button class="question">Sino-sino ang may birthmonth sa July?</button>
+            </li>
+            <li class="list-inline-item">
+              <span id="tooltip">Ano ang number ni Ana?</span>
+              <button class="question">Ano ang number ni Ana?</button>
+            </li>
+            <li class="list-inline-item">
+              <span id="tooltip">Ilang sa regular employees ang may birthday na July?</span>
+              <button class="question">Ilang sa regular employees ang may birthday na July?</button>
+            </li>
+            <li class="list-inline-item">
+              <span id="tooltip">Ilista ang bilang ng staff kada project</span>
+              <button class="question">Ilista ang bilang ng staff kada project</button>
+            </li>
+            <li class="list-inline-item">
+              <span id="tooltip">Sinusino ang nakatira sa Krus na Ligas?</span>
+              <button class="question">Sinusino ang nakatira sa Krus na Ligas?</button>
+            </li>
+
+            <span class="u3_text">
+
+              <span id="more-btn">
+
+                <li class="list-inline-item">
+                  <span id="tooltip">Mga pangalan ng staff at contact person nito pati number</span>
+                  <button class="question">Mga pangalan ng staff at contact person nito pati number</button>
+                </li>
+                <li class="list-inline-item">
+                  <span id="tooltip">Paano maccontact si si Sir Elmer Peramo?</span>
+                  <button class="question">Paano maccontact si si Sir Elmer Peramo?</button>
+                </li>
+                <li class="list-inline-item">
+                  <span id="tooltip">Sino-sino ang Administrative Aide IV?</span>
+                  <button class="question">Sino-sino ang Administrative Aide IV?</button>
+                </li>
+                <li class="list-inline-item">
+                  <span id="tooltip">Mga staff na si Elmer Peramo ang supervisor</span>
+                  <button class="question">Mga staff na si Elmer Peramo ang supervisor</button>
+                </li>
+                <li class="list-inline-item">
+                  <span id="tooltip">Mga staff na nagbigay ng phone number</span>
+                  <button class="question">Mga staff na nagbigay ng phone number</button>
+                </li>
+                <li class="list-inline-item">
+                  <span id="tooltip">Sino-sino ang Project Administrative Assistant I?</span>
+                  <button class="question">Sino-sino ang Project Administrative Assistant I?</button>
+                </li>
+                <li class="list-inline-item">
+                  <span id="tooltip">Sino-sino ang Senior Science Reasearch Specialist?</span>
+                  <button class="question">Sino-sino ang Senior Science Reasearch Specialist?</button>
+                </li>
+                <li class="list-inline-item">
+                  <span id="tooltip">Mga projects ng ASTI at short description</span>
+                  <button class="question">Mga projects ng ASTI at short description</button>
+                </li>
+                <li class="list-inline-item">
+                  <span id="tooltip">Listahan ng salary grade ng bawat position</span>
+                  <button class="question">Listahan ng salary grade ng bawat position</button>
+                </li>
+                <li class="list-inline-item">
+                  <span id="tooltip">Mga staff na taga-Puerto Princesa City</span>
+                  <button class="question">Mga staff na taga-Puerto Princesa City</button>
+                </li>
+                <li class="list-inline-item">
+                  <span id="tooltip">Sino-sino ang Chief Science Reasearch Specialist?</span>
+                  <button class="question">Sino-sino ang Chief Science Reasearch Specialist?</button>
+                </li>
+                <li class="list-inline-item">
+                  <span id="tooltip">Bilang ng mga empleyado na galing sa probinsya</span>
+                  <button class="question">Bilang ng mga empleyado na galing sa probinsya</button>
+                </li>
+              </span>
+            </span>
+        </span>
+      </div>
+
+      <div class="col-sm- right">
+        <button onClick="minimized_suggest()" class="btn" id="dropdown-btn">
+          <span id="more-text">See more </span>
+          <img id="more-logo" src="Media\more_arrow_btn.svg" alt="dropdown-btn" />
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!--  <div id="results" class="input-group"></div>  -->
+
+
+
+
+
+
+  <!-- footer -->
+  <div class="footer">
+    <p>
+      <span>Department of Science and Technology - Advanced Science and Technology Institute |</span>
+      <a href="#"> https://asti.dost.gov.ph/</a>
+    </p>
+  </div>
+
+
+
+
+  <script src="tagalog_word_list.js"></script>
+  <script src="english_word_list.js"></script>
+  <script src="spellchecker.js"></script>
+
+  <script charset="UTF-8">
+    set_valid_word_list(english_word_list, tagalog_word_list);
+  </script>
+
+  <script src="ui.js"> hello_world();</script>
+</body>
+
+<!-- javascript-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+
+
+
+  // keypress == "enter" run search_btn
+  var button_active = false;
+  var search_txt_query = document.getElementById("search_txt_query")
+  search_txt_query.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.getElementById("search_btn").click();
+    }
+
+    if (event.onchange) {
+      console.log("change");
+    }
+  });
+
+
+  const suggest_list = document.getElementById("list");
+
+
+  suggest_list.addEventListener("click", function (e) {
+    let search_txt_query = e.target.innerText;
+    let search_txt_form = document.getElementById("search_txt_query");
+    search_txt_form.contentEditable = true;
+    search_txt_form.value = search_txt_query;
+    // var hidesuggested = document.getElementById('card_suggest_list');
+    // hidesuggested.style.display = "none";
+    // window.location.href = "result.html?search=" + search_txt_query;
+    document.getElementById('search_btn').disabled = false;
+  })
+
+  //TANONG-10: USE PREDEFINED QUESTION
+  var allItems = document.querySelectorAll(".list-inline-item");
+  var count = 0;
+  var prev = "";
+  var current = "";
+  var childnum = document.getElementById("list");
+  var count = 0;
+  for (var index = 0; index < allItems.length; index++) {
+    allItems[index].querySelector("button").addEventListener("click",
+      function () {
+        current = this.closest(".list-inline-item");       //store value to current variable
+        current.remove();
+        document.getElementById("search_txt_query").focus();
+        if (prev != current) {                                  //if condition is true, pass current's value to prev and insert on top of list
+          try {
+            count = childnum.children.length;
+            document.getElementById("list").insertBefore(prev, document.getElementById("list").children[0]);
+            // count = childnum.children.length;
+            console.log("count: " + count);
+            if (count > 6) {
+              document.getElementById("more-btn").insertBefore(document.getElementById("list").children[count - 1], document.getElementById("more-btn").children[0]);
+            }
+          } catch (e) { }
+          prev = current;
+        }
+      });
+  }
+
+  //error message appears and search button disables when invalid character is entered
+  function input_change() {
+
+    wordTyped();
+
+    var error_msg = document.getElementById("error_msg");
+    var search_txt_value = document.getElementById("search_txt_query").value;
+
+    console.log(search_txt_value);
+
+    if (contains_whitespaces(search_txt_value)) {
+      document.getElementById('search_btn').disabled = true;
+    } else if (search_txt_value === "") {
+      document.getElementById('search_btn').disabled = true;
+      count = childnum.children.length;
+      document.getElementById("list").insertBefore(prev, document.getElementById("list").children[0]);
+      if (count > 6) {
+        document.getElementById("more-btn").insertBefore(document.getElementById("list").children[count - 1], document.getElementById("more-btn").children[0]);
+      }
+    } else {
+      document.getElementById('search_btn').disabled = false;
+    }
+  }
+
+  function minimized_suggest() {
+    var moreText = document.getElementById("more-btn");
+    var btnText = document.getElementById("more-text");
+    let image = document.getElementById("more-logo");
+    var see_text = btnText.innerHTML;
+    console.log(see_text);
+
+    if (see_text != "See less") {
+      moreText.style.display = "inline";
+      btnText.innerHTML = "See less";
+      image.style.rotate = "180deg";
+    } else {
+      moreText.style.display = "none"
+      btnText.innerHTML = "See more";
+      image.style.rotate = "0deg";
+    }
+  }
+
+  function contains_whitespaces(str) {//special character test
+    //const specialChars = /[`!@#$%^&*()_+\=\[\]{};':"\\|,.<>\/~]/; //remove '?'&'-' '/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/'
+    const whitespaces = /^[\s]+$/; //[`!@#$%^&*()_+\=\[\]{};':"\\|,.<>\/~]|
+    //specialChars.test(str) ? console.log("special") : console.log("notspecial");
+    return whitespaces.test(str);
+  }
+  function contains_alphanumeric(str) { //alphanumeric test 
+    const letterNumber = /^[a-z0-9]*$/i;
+    //letterNumber.test(str) ? console.log("beta") : console.log("notbeta");
+    if (!(letterNumber) && letterNumber.test(str)) {   //!str.match(letterNumber)
+      return true;
+    } else return false;
+  }
+
+  function space_deleter(str) {
+    const in_between_space = /[^\w]\s+\s[^\w]/g;
+    const start_space = /^\s\w/;
+    const space_start = /^\s/; //for boolean checking
+    const space_start_more = /^\s{+\s}/;
+    const two_spaces = /\s\s/g;
+
+    if (in_between_space.test(str)) {
+      console.log("inbetween");
+      return str.replace(/[^\w]+\s/g, ' ');
+    }
+
+    if (two_spaces.test(str)) {
+      console.log("twospaces");
+      return str.replace(/(\s\s)/g, ' ')
+    }
+
+    if (start_space.test(str)) {
+      console.log("startspace");
+      return str.replace(/^\s/, '')
+    }
+
+    if (space_start_more.test(str)) {
+      console.log("startspacemore");
+      return str.replace(/^\s+\s/, '')
+    }
+
+    else return str;
+  }
+  //button clicks
+  function search_btn() { //onclick button
+    var search_txt_query = document.getElementById("search_txt_query").value;
+
+    if (!contains_alphanumeric(search_txt_query) && search_txt_query != "") {
+      window.location = "result.html";
+      search_txt_query = space_deleter(search_txt_query);
+      console.log(search_txt_query);
+      set_word_to_sentence();//store the lat inserted word into the stack
+      window.location.href = "result.html?search=" + search_txt_query + "_" + get_whole_word_sentence() + '_' + get_mispell_ctr();
+    } else {
+      error_msg();
+    }
+  }
+
+  //////////////////////////////// onkeydown key handler
+  const handle_keydown = event => {
+    console.log('user pressed:', event.key)
+    if (event.key === 'Enter') {
+      this.form_submit_button();
+      console.log("passing:" + this.state.Tanong)
+      // window.location.pathname = "/Result?search="+this.state.Tanong;
+      // this.set_Tanong();
+      let tanong = value_of_form();
+      tanong = this.space_deleter(tanong);
+      console.log("tanong is on keydown = " + tanong)
+      window.location.href = "/Result?search=" + tanong;
+    }
+    if (event.key === 'Tab') {
+      event.preventDefault();
+    }
+  }
+
+  document.addEventListener("keyup", detectTabKey);
+
+  function detectTabKey(e) {// this is the working tab key detector. ignore the rest 
+
+    let event_key = String.fromCharCode(e.keyCode); //convert keycode into string
+    //let search_txt_query = getElementById('search_txt_query');
+    //const elem = document.activeElement;
+    const elem = document.querySelector('.form-control');
+
+    console.log("\n\nuser is pressing " + event_key + "\n\n");
+
+    // if (e.keyCode >= 48 && event.keyCode <= 57) {
+    //   alert('input was 0-9');
+    // }
+
+    if (e.keyCode >= 65 && event.keyCode <= 90 && elem == document.activeElement) {//store if the user is typing letters
+      //alert('input was a-z');
+      set_user_letter_containers(event_key);
+      //console.log("\nletter stored:"+event_key);
+    }
+
+    if (e.keyCode == 9) {//pressing tab
+      console.log('\nuser pressed tab?:', event.keyCode)
+      event.preventDefault();
+      document.getElementById("search_txt_query").focus();
+      set_user_letter_to_word_containers();//concat letters and push to form word
+      get_user_word_containers();  //no speller group
+      set_word_to_sentence();
+
+      //console.log("\n getting whole word:"+get_whole_word_sentence());
+      //speller_click();//add in front
+      accept_speller();//accept
+      //activeElem = document.activeElement;
+      //console.log(activeElem.href);
+    }
+    if (e.keyCode == 32 && elem == document.activeElement) {//if user pressed space then store push into word_holder_container
+      console.log('\nuser pressed space?:', event.keyCode);
+
+      //setCaretPosition(2)// caret here
+      set_user_letter_to_word_containers();//concat letters and push to form word
+      get_user_word_containers();  //no speller group
+
+      set_word_to_sentence();//spell corrector
+      //console.log("\n getting whole word:"+get_whole_word_sentence());
+      //activeElem = document.activeElement;
+      //console.log(activeElem.href);
+    }
+    if (e.keyCode == 8 && elem == document.activeElement) {//pressing delete
+      pop_user_letter_containers();
+      console.log('\nuser pressed delete?:', event.keyCode)
+    }
+    if (e.keyCode == 76 && elem == document.activeElement) { //if user clicked delete then pop() the word_holder_container
+      //set_word_to_sentence()
+      //activeElem = document.activeElement;
+      //console.log(activeElem.href);
+    }
+  }
+
+  search_txt_query.addEventListener("keypress", function (event) {
+    //console.log("\n user is pressing ", event.keyCode);
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      try {
+        console.log("\n enter is pressed")
+        //document.getElementById("search-btn").click();
+      } catch (e) { }
+
+    }
+    if (event.key === 'Tab' || event.which == 9) {
+      event.preventDefault();
+      console.log("\n tab is pressed")
+      try {
+        document.getElementById("search_txt_query").focus();
+        //document.getElementById("search-btn").click();
+      } catch (e) { }
+
+    }
+  });
+  //move care backwards
+
+  function setCaretPosition(pos) {
+    // For Most Web Browsers
+    let ctrl = document.getElementById("search_txt_query");
+    if (ctrl.setSelectionRange) {
+      ctrl.focus();
+      ctrl.setSelectionRange(pos, pos);
+      // IE8 and below
+    } else if (ctrl.createTextRange) {
+      var range = ctrl.createTextRange();
+      range.collapse(true);
+      range.moveEnd('character', pos);
+      range.moveStart('character', pos);
+      range.select();
+    }
+  }
+
+
+
+
+  function error_msg() { //error message display
+
+    var error_list = document.getElementById("card_suggest_list");
+    error_msg.style.display = "inline";
+    error_list.style.display = "none";
+
+  }
+
+  window.onload = function () {
+    var suggested = document.getElementById('card_suggest_list');
+    var error_msg = document.getElementById("error_msg"); //experimental
+
+    var search_txt_value = document.getElementById("search_txt_query").value;
+
+    if (search_txt_value === "") {
+      document.getElementById('search_btn').disabled = true;
+    }
+
+    document.onclick = function (div) {
+      if (div.target.id == 'search_txt_query' && search_txt_value != "") {
+        suggested.style.display = "none";
+      } else {    //experimental
+        suggested.style.display = "block";    //experimental
+        error_msg.style.display = "none";   //experimental
+      }
+    }
+  }
+
+</script>
+
+</html>
